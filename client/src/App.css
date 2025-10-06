@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff6e9; /* màu be sáng giống hình bạn gửi */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #fff6e9;
+  box-shadow: 0px 0.233px 8px lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ✅ tất cả về bên trái */
+  padding: 0.8rem 2rem;
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo_wrapper img {
+  height: 40px;
+  width: auto;
+}
+
+.logo_wrapper span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3a2f2f;
+}
+
+
+/* Menu */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ✅ logo bên trái, menu bên phải */
+  background-color: #fff6e9;
+  padding: 0.8rem 2rem;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo_wrapper img {
+  width: 40px;
+  height: auto;
+}
+
+.logo_wrapper h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navigation-menu {
+  display: flex;
+  gap: 1.5rem;        /* ✅ tạo khoảng cách giữa các mục */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 5rem; /* cách lề phải 2rem */
+}
+
+.navigation-menu li a {
+  text-decoration: none;
+  color: #3a2f2f;
+  font-weight: 600;
+ 
+  
+  transition: 0.3s;
+}
+
+.navigation-menu li a:hover,
+.navigation-menu li a.activeNav {
+  color: #e4572e;
+
+
+}

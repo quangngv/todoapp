@@ -1,0 +1,134 @@
+.landing_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 160px auto 60px; /* chừa khoảng trống dưới nav nhiều hơn */
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.landing_text {
+  flex: 1 1 50%;
+}
+
+.landing_text h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #3a2f2f; /* chữ nâu đậm */
+  margin-bottom: 1.5rem;
+}
+
+.landing_text h1 span {
+  color: #e4572e; /* chữ DoDo màu cam nổi bật */
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Nút Register */
+.primaryBtn {
+  background-color: #e4572e; 
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.primaryBtn:hover {
+  background-color: #c9451e;
+}
+
+/* Nút Login */
+.secondaryBtn {
+  color: #e4572e;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #e4572e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.secondaryBtn:hover {
+  background-color: #e4572e;
+  color: white;
+}
+
+/* Ảnh minh họa */
+.landing_img {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.landing_img img {
+  max-width: 120%;  /* ✅ làm ảnh to hơn */
+  height: auto;
+  display: block;
+  transform: none; /* bỏ nhích ảnh để cân đối */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing_wrapper {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 140px; /* chừa khoảng trống nav trên mobile */
+  }
+
+  .btnWrapper {
+    justify-content: center;
+  }
+
+  .landing_img img {
+    max-width: 100%; /* ảnh vừa với màn nhỏ */
+  }
+}
+
+/* Nút đổi ngôn ngữ góc phải dưới */
+.langBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.7rem 1.4rem;
+  background-color: #3a2f2f;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.langBtn:hover {
+  background-color: #e4572e;
+  transform: scale(1.05);
+}
+.footer {
+  text-align: center;
+  margin-top: 60px; /* tạo khoảng cách với phần nội dung trên */
+  padding: 20px 0;
+  color: #333;
+  font-size: 0.9rem;
+  background: transparent; /* nền trong suốt */
+}
+
+.footer a {
+  color: #0073e6;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #005bb5;
+}
+

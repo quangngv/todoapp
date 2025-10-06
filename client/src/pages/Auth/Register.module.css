@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff6ed;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Căn giữa */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff6ed;
+}
+
+/* Card đăng ký */
+.register__card {
+  position: relative;
+  background-color: #fff0e0;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(60, 46, 46, 0.15);
+  width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Icon người dùng */
+.register__card img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 15px;
+}
+
+/* Tiêu đề */
+.title {
+  font-size: 24px;
+  color: #3c2e2e;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* Phụ đề */
+.subtitle {
+  color: #5c4a3f;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Hàng chứa họ và tên */
+.name__row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Ô input */
+.input__wrapper {
+  margin-bottom: 15px;
+}
+
+.customInput {
+  border-radius: 8px !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+.customInput:focus-within {
+  border-color: #e25b2a !important;
+  box-shadow: 0 0 5px rgba(226, 91, 42, 0.3) !important;
+}
+
+/* Nút đăng ký */
+.register__btn {
+  width: 100%;
+  height: 40px;
+  background-color: #e25b2a !important;
+  border-color: #e25b2a !important;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.register__btn:hover {
+  background-color: #d44f1f !important;
+  border-color: #d44f1f !important;
+}
+
+/* Dòng gợi ý đăng nhập */
+.hint {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #3c2e2e;
+}
+.hint a {
+  color: #e25b2a;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hint a:hover {
+  text-decoration: underline;
+}
+
+/* Nút X quay lại trang chính */
+.close__btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #3c2e2e;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.close__btn:hover {
+  color: #e25b2a;
+}

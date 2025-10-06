@@ -1,0 +1,6 @@
+echo start server...
+start cmd /k "npm run dev"
+
+
+echo start client...
+start cmd /k "cd client && npm start"
