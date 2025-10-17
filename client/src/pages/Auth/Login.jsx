@@ -3,9 +3,9 @@ import React from 'react'
 import styles from './Login.module.css'         
 import login from '../../assets/login.png'     
 import { Link, useNavigate } from 'react-router-dom' 
-import { Button, Input } from 'antd'           
-import { CloseOutlined } from '@ant-design/icons' 
-
+import { Button, Input, message } from 'antd'           
+import { CloseOutlined } from '@ant-design/icons'
+import AuthServices from '../../services/authServices.js' 
 
 function Login() {
  
@@ -18,8 +18,24 @@ function Login() {
 
   // Hàm xử lý khi người dùng nhấn nút “Login”
   const handleSubmit = async () => {
-    // Tạm thời để trống — có thể thêm logic xác thực sau này
-    // Ví dụ: kiểm tra username/password, gọi API đăng nhập...
+    console.log("login");
+    try {
+      setLoading(true); // Bắt đầu quá trình đăng nhập, hiển thị vòng xoay
+      let data ={
+        username,
+        password
+      }
+      const response = await AuthServices.loginUser(data);
+      console.log(response.data);
+      localStorage.setItem("toDoAppUser", JSON.stringify(response.data));
+      message.success("Login successful");
+      navigate('/to-do-list'); // Chuyển về trang chủ sau khi đăng nhập thành công
+      setLoading(false); // Kết thúc quá trình, ẩn vòng xoay
+    } catch (error) {
+      console.log()
+      message.error(error.message);
+      setLoading(false); // Kết thúc quá trình, ẩn vòng xoay
+    }
   }
 
   // JSX — phần giao diện
@@ -36,7 +52,7 @@ function Login() {
 
         {/* Hình minh họa và tiêu đề */}
         <img src={login} alt="login" />
-        <h3 className={styles.title}>Login</h3>
+        <h2 className={styles.title}>Login</h2>
         
         {/* Ô nhập Username */}
         <div className={styles.input__wrapper}>

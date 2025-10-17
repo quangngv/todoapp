@@ -5,6 +5,8 @@ import userIcon from '../../assets/login.png'
 import { Link, useNavigate } from 'react-router-dom' 
 import { Input, Button } from 'antd'              
 import { CloseOutlined } from '@ant-design/icons'  
+import AuthServices from '../../services/authServices.js'
+import { message } from 'antd';
 
 
 function Register() {
@@ -16,7 +18,30 @@ function Register() {
   const [lastName, setLastName] = React.useState("")   
   const [username, setUsername] = React.useState("")  
   const [password, setPassword] = React.useState("")   
+  const [loading, setLoading] = React.useState(false) 
 
+   const handleSubmit = async () => {
+    console.log("register");
+    try {
+      setLoading(true); // Bắt đầu quá trình đăng nhập, hiển thị vòng xoay
+      let data ={
+        firstName,
+        lastName,
+        username,
+        password
+      }
+      const response = await AuthServices.registerUser(data);
+      console.log(response.data);
+      localStorage.setItem("toDoAppUser", JSON.stringify(response.data));
+      message.success("Register successful");
+      navigate('/to-do-list'); // Chuyển về trang chủ sau khi đăng nhập thành công
+      setLoading(false); // Kết thúc quá trình, ẩn vòng xoay
+    } catch (error) {
+      console.log()
+      message.error(error.message);
+      setLoading(false); // Kết thúc quá trình, ẩn vòng xoay
+    }
+  }
   return (
     <div className={styles.container}>
       <div className={styles.register__card}>
@@ -71,6 +96,8 @@ function Register() {
 
         {/* ✅ Nút đăng ký (Register) */}
         <Button
+          loading={loading}      // Hiển thị vòng xoay khi đang xử lý
+          onClick={handleSubmit} 
           type="primary"
           className={styles.register__btn}
           // Bạn có thể thêm sự kiện onClick để xử lý gửi dữ liệu (handleRegister)
