@@ -100,8 +100,7 @@ function Register() {
           onClick={handleSubmit} 
           type="primary"
           className={styles.register__btn}
-          // Bạn có thể thêm sự kiện onClick để xử lý gửi dữ liệu (handleRegister)
-        >
+          >
           Register
         </Button>
 
